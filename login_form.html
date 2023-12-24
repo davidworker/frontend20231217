@@ -105,7 +105,7 @@
         </div>
         <div class="register-wrap">
             <h1 class="slogan">會員註冊</h1>
-            <form action="https://book.niceinfos.com/api/form/">
+            <form action="https://book.niceinfos.com/api/form/" enctype="multipart/form-data" method="POST">
                 <div class="form-item">
                     <label class="form-label" for="register-account">帳號</label>
                     <input class="form-input" type="text" id="register-account" name="account" value=""
@@ -166,6 +166,11 @@
                 <div class="form-item">
                     <label for="register-remark" class="form-label">有甚麼想法嗎?</label>
                     <textarea name="remark" id="register-remark" placeholder="請輸入想法"></textarea>
+                </div>
+
+                <div class="form-item">
+                    <label for="register-pic">個人照</label>
+                    <input type="file" id="register-pic" name="pic" accept="image/*">
                 </div>
                 <div class="form-fn">
                     <label for="tab-switch" class="form-btn">登入</label>
