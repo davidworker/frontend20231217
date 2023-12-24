@@ -73,6 +73,10 @@
         #tab-switch:checked~.login-wrap {
             display: none;
         }
+
+        .form-label {
+            user-select: none;
+        }
     </style>
 </head>
 
@@ -151,6 +155,17 @@
                         <option>高雄</option>
                         <option value="">高雄2</option>
                     </select>
+                </div>
+                <style>
+                    #register-remark {
+                        height: 200px;
+                        padding: 10px;
+                        resize: none;
+                    }
+                </style>
+                <div class="form-item">
+                    <label for="register-remark" class="form-label">有甚麼想法嗎?</label>
+                    <textarea name="remark" id="register-remark" placeholder="請輸入想法"></textarea>
                 </div>
                 <div class="form-fn">
                     <label for="tab-switch" class="form-btn">登入</label>
