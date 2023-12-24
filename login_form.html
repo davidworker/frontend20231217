@@ -78,7 +78,7 @@
 
 <body>
     <div class="container">
-        <input type="checkbox" id="tab-switch">
+        <input type="checkbox" id="tab-switch" checked>
         <div class="login-wrap">
             <h1 class="slogan">會員登入</h1>
             <form>
@@ -101,7 +101,7 @@
         </div>
         <div class="register-wrap">
             <h1 class="slogan">會員註冊</h1>
-            <form>
+            <form action="https://book.niceinfos.com/api/form/">
                 <div class="form-item">
                     <label class="form-label" for="register-account">帳號</label>
                     <input class="form-input" type="text" id="register-account" name="account" value=""
@@ -119,6 +119,16 @@
                     </div>
                     <div>
                         <input type="radio" name="gender" id="f-gender" value="F"> <label for="f-gender">女</label>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="">興趣</label>
+                    <div>
+                        <input type="checkbox" name="fav[]" id="fav-f1" value="f1"> <label for="fav-f1">F1</label>
+                        <input type="checkbox" name="fav[]" id="fav-f2" value="f2"> <label for="fav-f2">F2</label>
+                        <input type="checkbox" name="fav[]" id="fav-f3" value="f3"> <label for="fav-f3">F3</label>
+                        <input type="checkbox" name="fav[]" id="fav-f4" value="f4"> <label for="fav-f4">F4</label>
+                        <input type="checkbox" name="fav[]" id="fav-f5" value="f5"> <label for="fav-f5">F5</label>
                     </div>
                 </div>
                 <div class="form-fn">
