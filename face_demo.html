@@ -19,9 +19,14 @@
             width: 150px;
             height: 150px;
             border-radius: 150px;
-            background: #757575;
+            background: #ffffff;
             position: absolute;
             top: 80px;
+            animation-name: run;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+            animation-direction: alternate;
         }
 
         .eye.left {
@@ -55,7 +60,30 @@
             height: 80px;
             left: 125px;
             bottom: 50px;
-            background: #ff1d1d;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        @keyframes run {
+            from {
+                transform: rotate(0deg);
+                background: #fff;
+            }
+
+            to {
+                transform: rotate(360deg);
+                background: red;
+            }
+        }
+
+        .s {
+            position: absolute;
+            bottom: -25px;
+            left: 100px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background: red;
         }
     </style>
 </head>
@@ -68,7 +96,9 @@
         <div class="eye right">
             <div class="circle bottom"></div>
         </div>
-        <div class="mouth"></div>
+        <div class="mouth">
+            <div class="s"></div>
+        </div>
     </div>
 </body>
 
