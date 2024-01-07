@@ -5,15 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Face</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .face {
+            background: rgb(255, 156, 99);
+            width: 500px;
+            height: 500px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .eye {
+            width: 150px;
+            height: 150px;
+            border-radius: 150px;
+            background: #757575;
+            position: absolute;
+            top: 80px;
+        }
+
+        .eye.left {
+            left: 50px;
+        }
+
+        .eye.right {
+            right: 50px;
+        }
+
+        .circle {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 80px;
+            background: #000;
+            left: 35px;
+        }
+
+        .circle.top {
+            top: 10px;
+        }
+
+        .circle.bottom {
+            bottom: 10px;
+        }
+
+        .mouth {
+            position: absolute;
+            width: 250px;
+            height: 80px;
+            left: 125px;
+            bottom: 50px;
+            background: #ff1d1d;
+        }
+    </style>
 </head>
 
 <body>
     <div class="face">
-        <div class="eye">
-            <div class="circle"></div>
+        <div class="eye left">
+            <div class="circle top"></div>
         </div>
-        <div class="eye">
-            <div class="circle"></div>
+        <div class="eye right">
+            <div class="circle bottom"></div>
         </div>
         <div class="mouth"></div>
     </div>
