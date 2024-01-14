@@ -30,3 +30,7 @@
     align-items: center;
     gap: 5px
 }
+
+.header-func .right-menu img {
+    width: 20px;
+}
