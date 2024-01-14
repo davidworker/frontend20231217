@@ -213,6 +213,8 @@ body {
 .select.open {
     background: #fff;
     color: #000;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .select.open .select-icon {
@@ -231,10 +233,35 @@ body {
     top: 0;
     background: #0b60a9;
     border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
     display: none;
 }
 
 .select.open .open-border {
+    display: block;
+}
+
+.select .other-item {
+    position: absolute;
+    top: 40px;
+    left: -1px;
+    width: calc(100% + 2px);
+    background: #fff;
+    z-index: 2;
+    border: 1px solid #969696;
+    border-top: 0;
+    display: none;
+}
+
+.select .other-item li {
+    padding: 10px;
+    border-bottom: 1px solid #dedede;
+}
+
+.select .other-item li:hover {
+    background: #eeeeee;
+    color: #3a3a3a;
+}
+
+.select.open .other-item {
     display: block;
 }
