@@ -181,7 +181,7 @@ body {
 }
 
 .select {
-    border: 1px solid #fff;
+    border: 1px solid #969696;
     height: 40px;
     border-radius: 4px;
     display: flex;
@@ -190,6 +190,8 @@ body {
     background: rgba(255, 255, 255, 0.1);
     color: #d3d3d3;
     position: relative;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .select .select-icon {
@@ -197,10 +199,42 @@ body {
     right: 10px;
     top: 8px;
     color: #fff;
-    cursor: pointer;
+}
+
+.select .select-icon span {
+    transition: 0.3s;
 }
 
 .select.active {
     background: #fff;
     color: #000;
+}
+
+.select.open {
+    background: #fff;
+    color: #000;
+}
+
+.select.open .select-icon {
+    color: #969696;
+}
+
+.select.open .select-icon span {
+    transform: rotate(180deg);
+}
+
+.select .open-border {
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    background: #0b60a9;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    display: none;
+}
+
+.select.open .open-border {
+    display: block;
 }
