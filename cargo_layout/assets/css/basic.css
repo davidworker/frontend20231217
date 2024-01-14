@@ -2,6 +2,11 @@
     --btn-bg: #0B60A9;
 }
 
+html,
+body {
+    font-family: 'Lemon', serif;
+}
+
 .header {
     width: 100%;
     /* height: 100px; */
@@ -11,7 +16,6 @@
     left: 0;
     color: #fff;
     font-size: 0.8rem;
-    font-family: 'Lemon', serif;
     z-index: 9;
 }
 
@@ -53,10 +57,14 @@
     padding: 5px 10px;
     background: #dedede;
     border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+    font-family: 'Lemon', serif;
 }
 
 .btn.primary {
     background: var(--btn-bg);
+    color: #fff;
 }
 
 #header-calc-btn {
@@ -86,6 +94,7 @@
 .banner-swiper {
     width: 100%;
     background: #091432;
+    color: #fff;
 }
 
 .banner-swiper .item {
@@ -93,4 +102,48 @@
     background-position: center;
     padding: 60px 0;
     height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-swiper .item-wrap {
+    padding: 50px 0;
+    width: 100%;
+}
+
+.banner-swiper .item-content {
+    width: 100%;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.banner-swiper .right-side {
+    width: 40%;
+}
+
+.banner-swiper .left-side {
+    width: 60%;
+}
+
+.banner-swiper .left-side .company-name {
+    padding: 15px 0;
+}
+
+.banner-swiper .left-side .description {
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+.banner-swiper .left-side .func {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.banner-swiper .left-side .func .btn {
+    padding: 10px 20px;
 }
