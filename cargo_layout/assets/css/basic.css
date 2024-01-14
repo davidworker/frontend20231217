@@ -55,7 +55,8 @@ body {
 
 .btn {
     padding: 5px 10px;
-    background: #dedede;
+    background: #686d7a;
+    color: #fff;
     border-radius: 3px;
     border: 0;
     cursor: pointer;
@@ -146,4 +147,60 @@ body {
 
 .banner-swiper .left-side .func .btn {
     padding: 10px 20px;
+}
+
+.banner-swiper .right-side .form {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.banner-swiper .right-side .form h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.banner-swiper .right-side .memo {
+    font-size: 0.6rem;
+    margin-bottom: 10px;
+}
+
+.banner-swiper .right-side .form-item {
+    display: flex;
+    font-size: 0.8rem;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.banner-swiper .right-side .form-item .form-label {
+    width: 100px;
+}
+
+.banner-swiper .right-side .form-item .form-input {
+    flex: 1;
+}
+
+.select {
+    border: 1px solid #fff;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #d3d3d3;
+    position: relative;
+}
+
+.select .select-icon {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.select.active {
+    background: #fff;
+    color: #000;
 }
