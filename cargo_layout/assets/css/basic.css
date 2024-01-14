@@ -1,10 +1,15 @@
+:root {
+    --btn-bg: #0B60A9;
+}
+
 .header {
     width: 100%;
     /* height: 100px; */
-    background: #dedede;
+    background: #091432;
     position: fixed;
     top: 0;
     left: 0;
+    color: #fff;
 }
 
 .header-func {
@@ -12,7 +17,8 @@
     padding: 10px 0;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ff0000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
 }
 
 .header-func .left-menu {
@@ -23,6 +29,11 @@
 .header-func .right-menu {
     display: flex;
     gap: 10px;
+    align-items: center;
+}
+
+.header-func .right-menu a {
+    display: flex;
 }
 
 .header-func .left-menu a {
@@ -33,4 +44,21 @@
 
 .header-func .right-menu img {
     width: 20px;
+}
+
+.btn {
+    padding: 5px 10px;
+    background: #dedede;
+
+}
+
+.btn.primary {
+    background: var(--btn-bg);
+}
+
+#header-calc-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
