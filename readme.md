@@ -19,3 +19,24 @@
 ## 20240107
 
 [20240107 筆記](20240107.md)
+
+## 20240114
+
+[20240114 筆記](20240114.md)
+
+## layout template
+
+[https://preview.themeforest.net/item/cargo-transport-logistics-theme/full_screen_preview/13281152](https://preview.themeforest.net/item/cargo-transport-logistics-theme/full_screen_preview/13281152)
+
+
+## 輪播套件
+
+[swiper](https://swiperjs.com/)
+
+## 社群網站 icon
+
+[iconfinder](https://www.iconfinder.com/social-media-icons?category=social-media&price=free)
+
+## google icon
+
+[google icon](https://fonts.google.com/icons)
