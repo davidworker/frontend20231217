@@ -10,6 +10,8 @@
     top: 0;
     left: 0;
     color: #fff;
+    font-size: 0.8rem;
+    font-family: 'Lemon', serif;
 }
 
 .header-func {
@@ -17,8 +19,8 @@
     padding: 10px 0;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.8rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
 }
 
 .header-func .left-menu {
@@ -28,7 +30,7 @@
 
 .header-func .right-menu {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
 }
 
@@ -49,7 +51,7 @@
 .btn {
     padding: 5px 10px;
     background: #dedede;
-
+    border-radius: 3px;
 }
 
 .btn.primary {
@@ -61,4 +63,21 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
+}
+
+.header-main {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-main .header-logo {
+    height: 50px;
+}
+
+.header-main .right-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
