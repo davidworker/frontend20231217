@@ -18,6 +18,21 @@
     padding: 0 20px;
     cursor: pointer;
     user-select: none;
+    position: relative;
+}
+
+.accrodion .item-header .on-hover {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: #e7410e;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.accrodion .item-header:hover .on-hover {
+    display: inline-flex;
 }
 
 .accrodion .item-body {
