@@ -311,7 +311,8 @@ body {
     cursor: pointer;
 }
 
-.state-switch .ball {
+.state-switch::after {
+    content: "";
     position: absolute;
     left: 4px;
     top: 3px;
@@ -322,8 +323,7 @@ body {
     transition: 0.4s;
 }
 
-
-#ref-switch:checked~.state-switch .ball {
+#ref-switch:checked~.state-switch::after {
     left: 62px;
     background: #ffffff;
 }

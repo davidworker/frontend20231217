@@ -29,7 +29,8 @@
     position: relative;
 }
 
-.accrodion .item-header .on-hover {
+.accrodion .item-header::after {
+    content: "";
     position: absolute;
     width: 10px;
     height: 100%;
@@ -39,7 +40,7 @@
     display: none;
 }
 
-.accrodion .item-header:hover .on-hover {
+.accrodion .item-header:hover::after {
     display: inline-flex;
 }
 
