@@ -12,6 +12,10 @@
     margin-bottom: 10px;
 }
 
+.accrodion .item:last-child {
+    margin-bottom: 0;
+}
+
 .accrodion .item-header {
     display: flex;
     justify-content: space-between;
