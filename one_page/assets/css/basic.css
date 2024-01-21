@@ -18,3 +18,26 @@ body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
+.header .menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: 600;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.header .menu li {
+    text-align: center;
+    transition: 0.5s;
+}
+
+.header .menu li:hover {
+    color: rgb(42, 42, 255);
+}
+
+.header .menu .en {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-family: "Agbalumo", system-ui;
+}
