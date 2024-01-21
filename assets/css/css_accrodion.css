@@ -8,6 +8,10 @@
     color: #fff;
 }
 
+.accrodion .item {
+    margin-bottom: 10px;
+}
+
 .accrodion .item-header {
     display: flex;
     justify-content: space-between;
@@ -25,7 +29,7 @@
     position: absolute;
     width: 10px;
     height: 100%;
-    background: #e7410e;
+    background: #0084ff;
     left: 0;
     top: 0;
     display: none;
@@ -45,5 +49,25 @@
 }
 
 .accrodion .item-body {
+    display: none;
+}
+
+.accrodion .item-switch:checked~.item-header {
+    background: #0084ff;
+}
+
+.accrodion .item-switch:checked~.item-body {
+    display: block;
+}
+
+.accrodion .item-switch:checked~.item-header .on-open {
+    display: block;
+}
+
+.accrodion .item-switch:checked~.item-header .on-close {
+    display: none;
+}
+
+.item-switch {
     display: none;
 }
