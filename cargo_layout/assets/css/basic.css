@@ -294,10 +294,42 @@ body {
     justify-content: center;
     font-size: 0.6rem;
     cursor: e-resize;
-    animation-name: run;
+    /* animation-name: run; */
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
+}
+
+.state-switch {
+    width: 100px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    border: 2px solid #fff;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.state-switch .ball {
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background: #ffffffad;
+    transition: 0.4s;
+}
+
+
+#ref-switch:checked~.state-switch .ball {
+    left: 62px;
+    background: #ffffff;
+}
+
+.hide-switch {
+    display: none;
 }
 
 @keyframes run {
