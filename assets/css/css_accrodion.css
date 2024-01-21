@@ -1,0 +1,24 @@
+.slogan {
+    display: flex;
+    height: 60px;
+    margin: 20px auto;
+    align-items: center;
+    justify-content: center;
+    background: rgb(32, 72, 202);
+    color: #fff;
+}
+
+.accrodion .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background: #7B708F;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.accrodion .item-body {
+    padding: 20px;
+    border: 1px solid #7B708F;
+}
