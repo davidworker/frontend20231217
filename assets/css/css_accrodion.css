@@ -16,9 +16,19 @@
     background: #7B708F;
     color: #fff;
     padding: 0 20px;
+    cursor: pointer;
+    user-select: none;
 }
 
 .accrodion .item-body {
     padding: 20px;
     border: 1px solid #7B708F;
+}
+
+.accrodion .on-open {
+    display: none;
+}
+
+.accrodion .item-body {
+    display: none;
 }
