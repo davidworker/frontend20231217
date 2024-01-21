@@ -186,3 +186,42 @@ body {
     position: relative;
     z-index: 2;
 }
+
+.flow {
+    padding: 50px 0;
+    position: relative;
+}
+
+.flow::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    border: 2px dashed #fff;
+    top: 0;
+    left: calc(50% - 2px);
+}
+
+.flow .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.flow .item .circle {
+    width: 30px;
+    height: 30px;
+    background: red;
+    border-radius: 30px;
+}
+
+.flow .item .tip {
+    position: absolute;
+    left: calc(50% + 50px);
+    background: rgb(26, 69, 189);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
