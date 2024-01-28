@@ -143,3 +143,38 @@ body {
 .banner .current-process {
     font-size: 1.5rem;
 }
+
+.footer {
+    background: #f9fafb;
+    border-top: 1px solid #dbdbdb;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+.footer .wrap {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer .footer-logo {
+    max-width: 100px;
+}
+
+.footer h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.footer .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.footer .icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
