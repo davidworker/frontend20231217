@@ -210,6 +210,18 @@ body {
     border-bottom-left-radius: 4px;
 }
 
+.other-project .item:nth-child(2) .cover {
+    background-image: url(../images/op-2.webp);
+}
+
+.other-project .item:nth-child(3) .cover {
+    background-image: url(../images/op-3.webp);
+}
+
+.other-project .item:nth-child(4) .cover {
+    background-image: url(../images/op-4.webp);
+}
+
 .other-project .text {
     width: 60%;
     padding: 10px;
