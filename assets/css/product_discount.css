@@ -29,12 +29,20 @@
     background-image: url(../images/food-2.jpg);
     background-size: cover;
     background-position: center;
+    position: relative;
+    overflow: hidden;
 }
 
-/* 
-.product-list .item .cover img {
-    max-width: 100%;
-} */
+.product-list .cover .discount {
+    position: absolute;
+    right: -106px;
+    top: 20px;
+    background: #ffffff;
+    color: rgb(255, 43, 43);
+    width: 100%;
+    text-align: center;
+    transform: rotate(40deg);
+}
 
 .product-list .item .name {
     font-size: 20px;
