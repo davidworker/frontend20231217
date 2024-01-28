@@ -1,0 +1,48 @@
+.header {
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #7c7c7c;
+}
+
+.header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 10px;
+}
+
+.header .logo {
+    position: relative;
+}
+
+.header .logo::after {
+    content: '';
+    position: absolute;
+    right: -25px;
+    top: 5px;
+    width: 1px;
+    height: 30px;
+    background: rgb(199, 199, 199);
+}
+
+.header .logo img {
+    height: 36px;
+}
+
+.header .wrap .left-side {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.header .wrap .left-side .menu ul {
+    display: flex;
+    gap: 15px;
+}
+
+.header .wrap .right-side ul {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
