@@ -6,7 +6,9 @@
     display: none;
 }
 
-
+.flow .item {
+    transition: 0.4s;
+}
 
 
 
@@ -96,5 +98,26 @@
         left: 20px;
         height: 0;
         width: calc(100% - 40px);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .flow .item:nth-child(even) .tip {
+        right: unset;
+        left: 70px;
+    }
+
+    .flow .item {
+        justify-content: flex-start;
+        padding-left: 20px;
+        margin-bottom: 85px;
+    }
+
+    .flow .item .tip {
+        left: 70px;
+    }
+
+    .flow::after {
+        left: 33px;
     }
 }
