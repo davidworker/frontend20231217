@@ -58,4 +58,26 @@
         position: relative;
         top: -10px;
     }
+
+    #mobile-menu-switch-checkbox:checked+.wrap .menu-wrap {
+        display: block;
+        position: fixed;
+        width: 100%;
+        background: #fff;
+        top: 80px;
+        left: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    #mobile-menu-switch-checkbox:checked+.wrap {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    #mobile-menu-switch-checkbox:checked+.wrap .menu-wrap .menu {
+        flex-direction: column;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
 }
