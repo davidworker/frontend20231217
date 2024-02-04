@@ -15,6 +15,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
 
         @media screen and (max-width: 800px) {
@@ -35,8 +36,21 @@
 
 <body>
     <div class="container">
-        <div class="block">Media Feature</div>
+        <div class="block">
+            <div>Media Feature</div>
+            <div id="current"></div>
+        </div>
     </div>
 </body>
+
+<script>
+    let current = document.querySelector('#current');
+
+    window.onresize = (e) => {
+        current.innerHTML = `${window.innerWidth}px`
+    }
+
+    current.innerHTML = `${window.innerWidth}px`
+</script>
 
 </html>
