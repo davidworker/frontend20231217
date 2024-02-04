@@ -80,4 +80,21 @@
         padding-bottom: 20px;
         padding-top: 20px;
     }
+
+    #join-form .wrap {
+        flex-direction: column;
+    }
+
+    #join-form .wrap>div {
+        width: 100%;
+    }
+
+    #join-form .wrap>div:first-child::after {
+        top: unset;
+        right: unset;
+        bottom: 0;
+        left: 20px;
+        height: 0;
+        width: calc(100% - 40px);
+    }
 }
