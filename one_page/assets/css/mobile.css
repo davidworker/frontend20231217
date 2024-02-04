@@ -1,0 +1,38 @@
+.mobile-menu-switch {
+    display: none;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 900px) {
+    .header .menu-wrap {
+        display: none;
+    }
+
+    .mobile-menu-switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .mobile-menu-switch>span {
+        display: inline-flex;
+        width: 30px;
+        height: 5px;
+        background-color: #000;
+        border-radius: 100px;
+        transition: 0.4s;
+    }
+
+    .mobile-menu-switch:hover>span {
+        background-color: red;
+    }
+}
