@@ -13,14 +13,27 @@
             background: red;
             color: yellow;
             margin-top: 20px;
-            transition: 1s;
+            margin-bottom: 20px;
+            transition: 3s;
+            transition-property: width;
             /* display: none; */
-            opacity: 0;
+            /* opacity: 0; */
         }
 
         .f2.active {
             /* display: block; */
-            opacity: 1;
+            /* opacity: 1; */
+            background: blue;
+            width: 300px;
+        }
+
+        #toggle {
+            border: 0;
+            background: #282bc7;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 2px;
         }
     </style>
 </head>
@@ -29,7 +42,20 @@
     <div class="container">
         <!-- 示範淡出淡入效果 -->
         <div class="f2">I'm f2</div>
+        <button id="toggle">toggle</button>
     </div>
 </body>
+<script>
+    let btn = document.querySelector('#toggle');
+    let dom = document.querySelector('.f2')
+
+    btn.addEventListener('click', () => {
+        if (dom.classList.contains('active')) {
+            dom.classList.remove('active');
+        } else {
+            dom.classList.add('active');
+        }
+    })
+</script>
 
 </html>
