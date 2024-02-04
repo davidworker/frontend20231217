@@ -146,5 +146,13 @@
         </div>
     </div>
 </body>
+<script>
+    let hmenu = document.querySelector('.header .menu');
+    let mswitch = document.querySelector('#mobile-menu-switch-checkbox');
+
+    hmenu.addEventListener('click', () => {
+        mswitch.checked = false;
+    })
+</script>
 
 </html>
