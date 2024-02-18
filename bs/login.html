@@ -16,6 +16,10 @@
         .login-message {
             display: none;
         }
+
+        #login-spinner {
+            display: none;
+        }
     </style>
 </head>
 
@@ -63,7 +67,14 @@
                 <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     登入說明
                 </button>
-                <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+                <button type="button" class="btn btn-primary" onclick="login()">
+                    <div class="d-flex gap-3 align-items-center">
+                        <div class="spinner-border text-danger" role="status" id="login-spinner">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <span>Login</span>
+                    </div>
+                </button>
             </div>
 
             <div class="mb-3 login-message" id="login-fail-message">
@@ -114,18 +125,26 @@
 <script>
     const success = document.querySelector('#login-success-message');
     const fail = document.querySelector('#login-fail-message');
+    const spinner = document.querySelector('#login-spinner')
     let current = 'success'
 
     function login() {
-        if (current == 'success') {
-            success.style.display = 'block';
-            fail.style.display = 'none';
-            current = 'fail'
-        } else {
-            success.style.display = 'none';
-            fail.style.display = 'block';
-            current = 'success'
-        }
+        spinner.style.display = 'block';
+        setTimeout(() => {
+            spinner.style.display = 'none';
+            if (current == 'success') {
+                success.style.display = 'block';
+                fail.style.display = 'none';
+                current = 'fail'
+            } else {
+                success.style.display = 'none';
+                fail.style.display = 'block';
+                current = 'success'
+            }
+        }, 2000)
+
+
+
     }
 </script>
 
