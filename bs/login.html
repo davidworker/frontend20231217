@@ -59,7 +59,10 @@
                     <option>高雄</option>
                 </datalist>
             </div>
-            <div class="text-end mb-3">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    登入說明
+                </button>
                 <button type="button" class="btn btn-primary" onclick="login()">Login</button>
             </div>
 
@@ -80,6 +83,25 @@
                 <div class="alert alert-success">Login Success.</div>
             </div>
         </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">登入說明</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    請輸入註冊時的帳號密碼進行登入。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
