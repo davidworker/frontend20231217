@@ -23,3 +23,28 @@ dom_say_btn.addEventListener('click', (e) => {
     dom_guest_name.value = '';
     dom_guest_name.focus();
 });
+
+// TODO: 當使用者將焦點移出輸入匡時，檢查是否有輸入
+// let validHasValue = (e) => {}
+// function validHasValue(e) {
+
+// }
+
+const validHasValue = (e) => {
+    let currentName = dom_guest_name.value;
+    // if (currentName) {
+
+    // } else {
+    //     console.log('Not Value.')
+    // }
+
+    if (!currentName) {
+        Swal.fire({
+            title: '發生錯誤',
+            html: '尚未輸入姓名',
+            icon: 'error'
+        })
+    }
+}
+
+dom_guest_name.addEventListener('change', validHasValue)
