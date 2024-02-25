@@ -47,4 +47,10 @@ const validHasValue = (e) => {
     }
 }
 
-dom_guest_name.addEventListener('change', validHasValue)
+dom_guest_name.addEventListener('change', validHasValue);
+
+const guestNameBlur = (e) => {
+    console.log('blur!');
+}
+
+dom_guest_name.addEventListener('blur', guestNameBlur);
