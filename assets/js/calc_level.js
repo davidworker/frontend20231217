@@ -42,12 +42,14 @@ const numInRange = (num) => {
 
 // 計算後要將焦點放到分數輸入區塊 [v]
 const focusToNum = () => {
-    // 請實作
+    dom_num.value = '';
+    setTimeout(() => {
+        dom_num.focus();
+    }, 500)
 }
 
-
 // 當按下計算按鈕時，抓取數字輸入匡內容
-const calcLevel = (e) => {
+const calcLevel = async (e) => {
     // 計算前要將顯示區塊隱藏
     dom_response.classList.add('d-none');
     console.log('start calc.');
@@ -57,23 +59,25 @@ const calcLevel = (e) => {
 
     // 檢查是否有輸入分數 [v]
     if (!checkHasNum(currentNum)) {
-        Swal.fire({
+        await Swal.fire({
             title: '轉換錯誤',
             html: '尚未輸入分數',
             icon: 'error'
         })
         // 計算後要將焦點放到分數輸入區塊 [v]
+        focusToNum();
         return;
     }
 
     // 檢查分數是否落在 0 ~ 100 之間 [v]
     if (!numInRange(currentNum)) {
-        Swal.fire({
+        await Swal.fire({
             title: '轉換錯誤',
             html: `分數: ${currentNum} 未落在 0 ~ 100 之間`,
             icon: 'error'
         })
         // 計算後要將焦點放到分數輸入區塊 [v]
+        focusToNum();
         return;
     }
 
@@ -85,11 +89,21 @@ const calcLevel = (e) => {
     dom_response.innerHTML = content;
     dom_response.classList.remove('d-none');
     // 計算後要將焦點放到分數輸入區塊 [v]
+    focusToNum();
 }
 
 dom_calc_btn.addEventListener('click', calcLevel);
 
 // 分數輸入區塊按下 enter 也可以計算 [v]
+
+const triggerCalc = (e) => {
+    let key = e.key;
+    if (key && key.toUpperCase() == 'ENTER') {
+        calcLevel(e);
+    }
+}
+
+dom_num.addEventListener('keyup', triggerCalc);
 
 /**
  * 1. 抓取 dom
