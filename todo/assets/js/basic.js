@@ -31,7 +31,6 @@ const insertTodo = (text) => {
     dom.data.appendChild(li);
 }
 
-// 
 /**
  * 1. 按鈕事件綁定
  * @param {object} e 事件物件，事件觸發時自動傳進
@@ -70,3 +69,32 @@ const onBtnClick = async (e) => {
 }
 dom.btn.addEventListener('click', onBtnClick);
 
+
+// 當點項目的 checkbox 可切換選取狀態
+const bindCheckboxOnClick = () => {
+    // 抓取畫面上所有 .todo-checkbox 的 dom
+    // let checkbox_doms = document.querySelectorAll('.todo-checkbox');
+    // checkbox_doms.forEach((item) => {
+    //     item.addEventListener('click', (e) => {
+    //         console.log(e);
+    //         toggleCheckboxStatus(item);
+    //     });
+    // })
+
+    // 使用事件氣泡特性，綁定上一層 dom
+    dom.data.addEventListener('click', (e) => {
+        let target = e.target;
+        if (target && target.classList.contains('todo-checkbox')) {
+            let li = target.parentNode;
+            if (target.classList.contains('active')) {
+                target.classList.remove('active');
+                li.classList.remove('checked');
+            } else {
+                target.classList.add('active');
+                li.classList.add('checked');
+            }
+        }
+    })
+}
+
+bindCheckboxOnClick();
