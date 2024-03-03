@@ -19,17 +19,22 @@ let dom = {
 
 /**
  * 將值新增到列表區塊
- * @param {string} text 
+ * @param {string} text 項目名稱
  * @returns {void}
  */
 const insertTodo = (text) => {
-    console.log(`insert text:${text}`);
+    // 因為 appendChild 只接受 Node 物件，所以需要建立 Node 物件後再附加資料
+    let li = document.createElement('li');
+    li.classList.add('todo-item');
+    li.innerHTML = `<span class="todo-checkbox"></span>
+                    <span>${text}</span>`;
+    dom.data.appendChild(li);
 }
 
 // 
 /**
  * 1. 按鈕事件綁定
- * @param {object} e 
+ * @param {object} e 事件物件，事件觸發時自動傳進
  * @returns {void}
  */
 const onBtnClick = async (e) => {
