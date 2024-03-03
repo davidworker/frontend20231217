@@ -13,6 +13,17 @@ body {
     font-family: "Noto Sans TC", sans-serif;
 }
 
+.header {
+    margin: 10px auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header img {
+    max-width: 60px;
+}
+
 .input-wrap {
     margin: 10px auto;
 }
