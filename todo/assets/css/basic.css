@@ -84,3 +84,67 @@ body {
 .btn.danger.active {
     background: var(--bg-danger-hover);
 }
+
+.data-wrap {
+    margin: 10px auto;
+}
+
+.data-container {
+    border: 1px solid #dedede;
+    padding: 10px;
+    min-height: 300px;
+}
+
+#todo-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.todo-item {
+    padding: 10px;
+    background: var(--bg-primary);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.todo-item:hover {
+    background: var(--bg-primary-hover);
+}
+
+.todo-checkbox {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #dedede;
+    background: #ffffff;
+    border-radius: 2px;
+    position: relative;
+}
+
+.todo-checkbox::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--bg-danger);
+    border-radius: 2px;
+    top: 1px;
+    opacity: 0;
+    transition-duration: 0.2s;
+}
+
+.todo-checkbox.active::after {
+    opacity: 1;
+}
+
+@media screen and (max-width: 650px) {
+    #todo-data {
+        grid-template-columns: 1fr;
+    }
+}
