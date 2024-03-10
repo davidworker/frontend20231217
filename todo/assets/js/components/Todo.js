@@ -1,4 +1,5 @@
 let dom = {};
+let items = [];
 
 class Todo {
     constructor() {
@@ -13,21 +14,30 @@ class Todo {
         dom = {
             text: document.querySelector('#data-text'),
             btn: document.querySelector('#add-btn'),
-            data: document.querySelector('#todo-data')
+            container: document.querySelector('#todo-data')
         }
     }
 
     /**
-     * 綁定 dom 事件 [v]
+     * 綁定 dom 事件 []
      */
     initEvent() {
+        this.initInsertEvent();
+
+
+        dom.container.addEventListener('click', this.toggleCheckbox);
+    }
+
+    /**
+     * 新增項目事件綁定 [v]
+     */
+    initInsertEvent() {
         // TODO: 會有 this 問題
         // dom.btn.addEventListener('click', this.insertItem);
 
         dom.btn.addEventListener('click', async () => {
             let value = dom.text.value;
             let isValid = await this.insertValid(value);
-            console.log(isValid);
 
             if (isValid) {
                 this.insert(value, false, -1);
@@ -35,13 +45,10 @@ class Todo {
 
             dom.text.value = '';
         });
-
-
-        dom.data.addEventListener('click', this.toggleCheckbox);
     }
 
     /**
-     * 新增資料驗證
+     * 新增資料驗證 [v]
      */
     async insertValid(value) {
         if (!value) {
@@ -67,8 +74,8 @@ class Todo {
     insert(text, active, index) {
         console.log('run insert.')
         console.log(text, active, index);
-        // this.generateItem(text, active, index);
-        // this.data.push({
+        this.generateItem(text, active, index);
+        // items.push({
         //     name: text,
         //     active: active
         // })
@@ -76,14 +83,14 @@ class Todo {
     }
 
     /**
-     * 產生項目 html []
+     * 產生項目 html 附加到顯示區塊 [v]
      * @param {*} text 
      * @param {*} active 
      * @param {*} index 
      */
     generateItem(text, active, index) {
         if (index < 0) {
-            index = this.data.length;
+            index = items.length;
         }
         let checkbox_active = '';
         let li = document.createElement('li');
@@ -97,7 +104,7 @@ class Todo {
 
         li.innerHTML = `<span class="todo-checkbox ${checkbox_active}" data-index="${index}"></span>
                         <span>${text}</span>`;
-        this.dom.data.appendChild(li);
+        dom.container.appendChild(li);
     }
 }
 
