@@ -16,7 +16,7 @@ class Todo {
      * 初始化因為 constructor 無法指定 async
      */
     async init() {
-        this.initItems();
+        await this.initItems();
         this.initDom();
         this.initEvent();
         this.restoreUI();
@@ -38,7 +38,6 @@ class Todo {
         skey = `${uid}-todo-app`;
         storage = new TodoStorage(skey);
         items = storage.read();
-        this.restoreUI();
     }
 
     /**
