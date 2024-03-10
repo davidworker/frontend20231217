@@ -1,10 +1,14 @@
+import { TodoStorage } from "./TodoStorage.js";
+
+let storage = new TodoStorage('todo-app');
 let dom = {};
-let items = [];
+let items = storage.read();
 
 class Todo {
     constructor() {
         this.initDom();
         this.initEvent();
+        this.restoreUI();
     }
 
     /**
@@ -19,13 +23,11 @@ class Todo {
     }
 
     /**
-     * 綁定 dom 事件 []
+     * 綁定 dom 事件 [v]
      */
     initEvent() {
         this.initInsertEvent();
-
-
-        dom.container.addEventListener('click', this.toggleCheckbox);
+        this.initStateToggleEvent();
     }
 
     /**
@@ -44,6 +46,12 @@ class Todo {
             }
 
             dom.text.value = '';
+        });
+    }
+
+    initStateToggleEvent() {
+        dom.container.addEventListener('click', (e) => {
+            this.toggleCheckbox(e);
         });
     }
 
@@ -66,20 +74,19 @@ class Todo {
     }
 
     /**
-     * 新增項目 []
+     * 新增項目 [v]
      * @param {*} text 
      * @param {*} active 
      * @param {*} index 
      */
     insert(text, active, index) {
-        console.log('run insert.')
-        console.log(text, active, index);
         this.generateItem(text, active, index);
-        // items.push({
-        //     name: text,
-        //     active: active
-        // })
-        // this.write();
+        items.push({
+            name: text,
+            active: active
+        })
+
+        storage.write(items);
     }
 
     /**
@@ -105,6 +112,38 @@ class Todo {
         li.innerHTML = `<span class="todo-checkbox ${checkbox_active}" data-index="${index}"></span>
                         <span>${text}</span>`;
         dom.container.appendChild(li);
+    }
+
+    /**
+     * 還原資料顯示
+     */
+    restoreUI() {
+        items.forEach((item, index) => {
+            this.generateItem(item.name, item.active, index);
+        })
+    }
+
+    /**
+    * 切換選取狀態
+    * @param {object} e 事件氣泡
+    */
+    toggleCheckbox(e) {
+        let target = e.target;
+        if (target && target.classList.contains('todo-checkbox')) {
+            let index = target.dataset.index;
+            let active = false;
+            let li = target.parentNode;
+            if (target.classList.contains('active')) {
+                target.classList.remove('active');
+                li.classList.remove('checked');
+            } else {
+                target.classList.add('active');
+                li.classList.add('checked');
+                active = true;
+            }
+            items[index].active = active;
+            storage.write(items);
+        }
     }
 }
 
