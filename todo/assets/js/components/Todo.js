@@ -28,6 +28,7 @@ class Todo {
     initEvent() {
         this.initInsertEvent();
         this.initStateToggleEvent();
+        this.initRemoveEvent();
     }
 
     /**
@@ -56,6 +57,32 @@ class Todo {
         dom.container.addEventListener('click', (e) => {
             this.toggleCheckbox(e);
         });
+    }
+
+    /**
+     * 移除項目事件綁定
+     */
+    initRemoveEvent() {
+        dom.container.addEventListener('click', (e) => {
+            this.remove(e);
+        });
+    }
+
+    /**
+     * 移除項目
+     * @param {*} e 
+     */
+    remove(e) {
+        let target = e.target;
+        if (target && target.classList.contains('just-icon')) {
+            target = target.parentNode;
+            let index = target.dataset.index;
+            if (items[index]) {
+                items.splice(index, 1);
+            }
+            storage.write(items);
+            this.restoreUI();
+        }
     }
 
     /**
@@ -115,8 +142,8 @@ class Todo {
         li.innerHTML = `<span class="todo-checkbox ${checkbox_active}" data-index="${index}"></span>
                         <div class="todo-content">
                             <span>${text}</span>
-                            <span class="todo-remove">
-                                <span class="material-symbols-outlined">
+                            <span class="todo-remove" data-index="${index}">
+                                <span class="material-symbols-outlined just-icon">
                                     delete
                                 </span>
                             </span>
@@ -128,6 +155,7 @@ class Todo {
      * 還原資料顯示
      */
     restoreUI() {
+        dom.container.innerHTML = '';
         items.forEach((item, index) => {
             this.generateItem(item.name, item.active, index);
         })
