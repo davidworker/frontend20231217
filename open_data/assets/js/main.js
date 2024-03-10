@@ -69,10 +69,27 @@ const showData = (index) => {
     })
 }
 
+const initYearChart = () => {
+    let years = {};
+    let items = [];
+    data.forEach((item, index) => {
+        let type = item['項目別'];
+        let sp = type.split('/');
+        if (!years[sp[0]]) {
+            years[sp[0]] = {
+                '男': {},
+                '女': {},
+            };
+        }
+        years[sp[0]][sp[2]] = item;
+    })
+
+    console.log(years);
+}
+
 generateTypeOption();
 initTypeSelectEvent();
-
-
+initYearChart();
 
 
 
