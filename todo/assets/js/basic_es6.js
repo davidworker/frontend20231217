@@ -42,5 +42,27 @@ const doFetch2 = async () => {
     console.log('doFetch2 run.');
 }
 
-doFetch2();
+const doFetchPost = async () => {
+    let api = 'https://book.niceinfos.com/frontend/api/';
+
+    let params = {
+        action: 'demo',
+        data: { a: 1, b: 2 },
+    };
+
+    let options = {
+        method: 'POST',
+        body: JSON.stringify(params)
+    };
+
+    let response = await fetch(api, options)
+    let data = await response.text();
+    data = JSON.parse(data);
+    console.log(data);
+    console.log(data.code);
+}
+
+// doFetch2();
 // doGet();
+
+doFetchPost();
