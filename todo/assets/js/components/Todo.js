@@ -49,6 +49,9 @@ class Todo {
         });
     }
 
+    /**
+     * 切換勾選狀態事件綁定 [v]
+     */
     initStateToggleEvent() {
         dom.container.addEventListener('click', (e) => {
             this.toggleCheckbox(e);
@@ -110,7 +113,14 @@ class Todo {
 
 
         li.innerHTML = `<span class="todo-checkbox ${checkbox_active}" data-index="${index}"></span>
-                        <span>${text}</span>`;
+                        <div class="todo-content">
+                            <span>${text}</span>
+                            <span class="todo-remove">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </span>
+                        </div>`;
         dom.container.appendChild(li);
     }
 
