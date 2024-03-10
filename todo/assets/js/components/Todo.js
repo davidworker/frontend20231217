@@ -21,33 +21,41 @@ class Todo {
      * 綁定 dom 事件 [v]
      */
     initEvent() {
-        dom.btn.addEventListener('click', this.insertItem);
+        // TODO: 會有 this 問題
+        // dom.btn.addEventListener('click', this.insertItem);
+
+        dom.btn.addEventListener('click', async () => {
+            let value = dom.text.value;
+            let isValid = await this.insertValid(value);
+            console.log(isValid);
+
+            if (isValid) {
+                this.insert(value, false, -1);
+            }
+
+            dom.text.value = '';
+        });
+
+
         dom.data.addEventListener('click', this.toggleCheckbox);
     }
 
     /**
-     * 新增項目事件串接 []
-     * @param {*} e 
+     * 新增資料驗證
      */
-    async insertItem(e) {
-        console.log('run insertItem.');
-        let value = dom.text.value;
-
+    async insertValid(value) {
         if (!value) {
             await Swal.fire({
                 title: '新增失敗',
                 html: '未輸入項目名稱',
                 icon: 'error'
             });
-        } else {
-            // TODO: not found.
-            this.insert(value, false, -1);
+            setTimeout(() => {
+                dom.text.focus();
+            }, 400)
+            return false;
         }
-        dom.text.value = '';
-
-        setTimeout(() => {
-            dom.text.focus();
-        }, 400)
+        return true;
     }
 
     /**
