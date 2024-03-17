@@ -63,9 +63,12 @@ class Chat {
             return;
         }
 
+        let d = new Date();
+        let times = d.getHours() + ':' + d.getMinutes();
+
         let message = document.createElement('div');
         message.classList.add(type);
-        message.innerHTML = `<span>${text}</span>`;
+        message.innerHTML = `<span class="timestamp">${times}</span><span>${text}</span>`;
 
         let content = messageWrap.querySelector('.content-wrap');
         content.appendChild(message);
