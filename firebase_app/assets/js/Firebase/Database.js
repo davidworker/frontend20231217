@@ -21,6 +21,19 @@ class Database {
             return false;
         }
     }
+
+    listen(path, callback, cache = false) {
+        let to = getPath(path);
+        onValue(to, (snapshot) => {
+            const data = snapshot.val();
+            if (typeof callback == 'function') {
+                callback(data, snapshot);
+            }
+        },
+            {
+                onlyOnce: cache
+            });
+    }
 }
 
 export { Database }

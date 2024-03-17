@@ -14,4 +14,9 @@ let config = {
 let app = await App.init(config);
 let database = new Database(app);
 
-database.write('test', 123);
+// database.write('test', 123);
+
+database.listen('test', (data, snapshot) => {
+    console.log('from listen callback.');
+    console.log(data);
+})
