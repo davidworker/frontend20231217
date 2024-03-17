@@ -34,6 +34,41 @@ class Database {
                 onlyOnce: cache
             });
     }
+
+    async read(path) {
+        let to = getPath(path);
+        try {
+            let snapshot = await get(to);
+            return snapshot.val();
+        } catch (e) {
+            console.log(e);
+            return false;
+        }
+    }
+
+    async insert(path, item) {
+        return this.inserts(path, [item]);
+    }
+
+    async inserts(path, items = []) {
+        let to = getPath(path);
+        let updates = {};
+        items.forEach(item => {
+            let key = push(to).key;
+            updates[key] = item;
+        });
+        try {
+            await update(to, updates);
+            return true;
+        } catch (e) {
+            console.log(e);
+            return false;
+        }
+    }
+
+    async remove(path) {
+        return await this.write(path, null);
+    }
 }
 
 export { Database }
