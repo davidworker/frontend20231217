@@ -6,7 +6,7 @@ import {
     signOut,
 } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js'
 
-const auth = {};
+let auth = {};
 
 class Auth {
     constructor(app) {
