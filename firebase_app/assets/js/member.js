@@ -1,29 +1,35 @@
 import { App } from './Firebase/App.js';
 import { Auth } from './Firebase/Auth.js';
+import { Register } from './member/Register.js';
+import { SignIn } from './member/SignIn.js';
 
 let app = await App.init();
 let auth = new Auth(app);
 
-let regEmail = document.querySelector('#register-email');
-let regPassword = document.querySelector('#register-password');
-let regBtn = document.querySelector('#register-btn');
+new SignIn(auth);
+new Register(auth);
 
-regBtn.addEventListener('click', () => {
-    let email = regEmail.value;
-    let pwd = regPassword.value;
-    doRegister(email, pwd);
+let registerWrap = document.querySelector('#register-wrap');
+let loginWrap = document.querySelector('#login-wrap');
+let toLoginBtn = document.querySelector('#to-login-btn');
+let toRegisterBtn = document.querySelector('#to-register-btn');
+
+
+toLoginBtn.addEventListener('click', () => {
+    loginWrap.classList.add('on');
+    registerWrap.classList.remove('on');
 })
 
-const doRegister = async (email, pwd) => {
-    if (!email || !pwd) {
-        alert('信箱密碼未輸入');
-        return;
-    }
+toRegisterBtn.addEventListener('click', () => {
+    loginWrap.classList.remove('on');
+    registerWrap.classList.add('on');
+})
 
-    let user = await auth.register(email, pwd);
-    if (user) {
-        alert('註冊成功');
-    } else {
-        alert('註冊失敗');
-    }
-}
+auth.onChange((user) => {
+    location.href = 'chat.html';
+}, () => {
+    loginWrap.classList.add('on');
+})
+
+
+

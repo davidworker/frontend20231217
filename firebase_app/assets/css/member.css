@@ -9,6 +9,12 @@
     text-align: right;
 }
 
+.text-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .header {
     margin: 20px auto;
     background: var(--bg);
@@ -35,6 +41,7 @@
     border-radius: var(--radius);
     padding: 0 15px;
     font-size: 1.4rem;
+    width: 100%;
 }
 
 .button {
@@ -58,4 +65,27 @@
 
 .button.primary:hover {
     background: #1851bb;
+}
+
+#register-wrap,
+#login-wrap {
+    display: none;
+}
+
+#register-wrap.on,
+#login-wrap.on {
+    display: block;
+    width: 300px;
+    margin: auto;
+    border: 1px solid #387cfa;
+    padding: 15px;
+    border-radius: var(--radius);
+}
+
+#register-wrap h2,
+#login-wrap h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #414141;
+    font-style: italic;
 }
