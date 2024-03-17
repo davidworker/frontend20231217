@@ -8,7 +8,7 @@ let database = new Database(app);
 let auth = new Auth(app);
 
 auth.onChange((user) => {
-    new Chat(user, database);
+    new Chat(user, database, auth);
 }, () => {
     location.href = 'member.html';
 });
