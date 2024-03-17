@@ -1,8 +1,16 @@
 import { App } from './Firebase/App.js';
 import { Database } from './Firebase/Database.js';
+import { Auth } from './Firebase/Auth.js';
 
 let app = await App.init();
 let database = new Database(app);
+let auth = new Auth(app);
+
+auth.onChange((user) => {
+    console.log(user);
+}, () => {
+    location.href = 'member.html';
+});
 
 let roleChoice = document.querySelector('#role-choice');
 let currentRole = document.querySelector('#current-role');
