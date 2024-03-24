@@ -114,6 +114,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="item-enable-wrap">
+                                        <div class="switch-component-wrap">
+                                            <span>啟用</span>
+                                            <span>
+                                                <span class="switch-component" :class="{active: item.enable == 'yes'}"
+                                                    @click="item.enable = item.enable == 'yes' ? 'no' : 'yes'"></span>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </template>

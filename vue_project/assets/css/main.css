@@ -186,3 +186,14 @@ body {
     content: "SELECT";
     color: #9b9b9b;
 }
+
+.item-enable-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width:800px) {
+    .top-banner-setting {
+        grid-template-columns: 1fr;
+    }
+}
