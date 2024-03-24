@@ -202,6 +202,31 @@ const options = {
         },
         deletePartner(index) {
             this.partner.items.splice(index, 1);
+        },
+        sortPrevious(type, index) {
+            if (type == 'partner') {
+                if (index <= 0) {
+                    return;
+                }
+
+                let other = this.partner.items[index - 1];
+                let current = this.partner.items[index];
+                this.partner.items[index - 1] = current;
+                this.partner.items[index] = other;
+            }
+        },
+        sortNext(type, index) {
+            if (type == 'partner') {
+
+                if (index >= this.partner.items.length - 1) {
+                    return;
+                }
+
+                let other = this.partner.items[index + 1];
+                let current = this.partner.items[index];
+                this.partner.items[index + 1] = current;
+                this.partner.items[index] = other;
+            }
         }
     },
     mounted() {
