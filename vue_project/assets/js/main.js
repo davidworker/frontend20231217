@@ -13,7 +13,45 @@ const options = {
                 enable: 'yes',
                 items: [
                     {
-                        img_link: '',
+                        open: false,
+                        enable: 'yes',
+                        img_link: '1',
+                        img_link_target: '_blank',
+                        start_date: '',
+                        start_time: '',
+                        end_date: '',
+                        end_time: '',
+                        desktop_img: '',
+                        mobile_img: '',
+                    },
+                    {
+                        open: false,
+                        enable: 'yes',
+                        img_link: '2',
+                        img_link_target: '_blank',
+                        start_date: '',
+                        start_time: '',
+                        end_date: '',
+                        end_time: '',
+                        desktop_img: '',
+                        mobile_img: '',
+                    },
+                    {
+                        open: false,
+                        enable: 'yes',
+                        img_link: '3',
+                        img_link_target: '_blank',
+                        start_date: '',
+                        start_time: '',
+                        end_date: '',
+                        end_time: '',
+                        desktop_img: '',
+                        mobile_img: '',
+                    },
+                    {
+                        open: false,
+                        enable: 'yes',
+                        img_link: '4',
                         img_link_target: '_blank',
                         start_date: '',
                         start_time: '',
@@ -32,9 +70,7 @@ const options = {
         },
         setEnable(type) {
             if (type == 'top_banner_enable') {
-                console.log(this.top_banner.enable)
                 this.top_banner.enable = this.top_banner.enable == 'yes' ? 'no' : 'yes';
-                console.log(this.top_banner.enable)
             }
         }
     },

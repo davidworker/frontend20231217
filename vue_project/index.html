@@ -46,6 +46,56 @@
                                     @click="setEnable('top_banner_enable')"></span>
                             </span>
                         </div>
+                        <template v-for="(item, item_index) in top_banner.items">
+                            <div class="accrodion-component" :class="{active: item.open}">
+                                <div class="accrodion-name" @click="item.open = !item.open">
+                                    橫幅輪撥 {{ item_index + 1 }}</div>
+                                <div class="accrodion-content">
+                                    <div class="top-banner-setting">
+                                        <div>
+                                            <div class="input-item">
+                                                <label for="">圖片連結</label>
+                                                <div class="banner-link-setting">
+                                                    <div>
+                                                        <input type="text" class="input-control" placeholder="請輸入網址"
+                                                            v-model="item.img_link">
+                                                    </div>
+                                                    <div>
+                                                        <select class="input-control">
+                                                            <option value="_blank">另開新頁</option>
+                                                            <option value="_self">直接轉跳</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="input-item">
+                                                <label for="">開始時間</label>
+                                                <div class="banner-datetime">
+                                                    <div>
+                                                        <input type="date" class="input-control">
+                                                    </div>
+                                                    <div>
+                                                        <input type="time" class="input-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="input-item">
+                                                <label for="">結束時間</label>
+                                                <div class="banner-datetime">
+                                                    <div>
+                                                        <input type="date" class="input-control">
+                                                    </div>
+                                                    <div>
+                                                        <input type="time" class="input-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>IMAGE</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
                     </li>
                     <li :class="{active: active == 1}">
                         <a href="#">Content 2</a>
