@@ -61,7 +61,7 @@
                                                             v-model="item.img_link">
                                                     </div>
                                                     <div>
-                                                        <select class="input-control">
+                                                        <select class="input-control" v-model="item.img_link_target">
                                                             <option value="_blank">另開新頁</option>
                                                             <option value="_self">直接轉跳</option>
                                                         </select>
@@ -72,10 +72,12 @@
                                                 <label for="">開始時間</label>
                                                 <div class="banner-datetime">
                                                     <div>
-                                                        <input type="date" class="input-control">
+                                                        <input type="date" class="input-control"
+                                                            v-model="item.start_date">
                                                     </div>
                                                     <div>
-                                                        <input type="time" class="input-control">
+                                                        <input type="time" class="input-control"
+                                                            v-model="item.start_time">
                                                     </div>
                                                 </div>
                                             </div>
@@ -83,10 +85,12 @@
                                                 <label for="">結束時間</label>
                                                 <div class="banner-datetime">
                                                     <div>
-                                                        <input type="date" class="input-control">
+                                                        <input type="date" class="input-control"
+                                                            v-model="item.end_date">
                                                     </div>
                                                     <div>
-                                                        <input type="time" class="input-control">
+                                                        <input type="time" class="input-control"
+                                                            v-model="item.end_time">
                                                     </div>
                                                 </div>
                                             </div>
@@ -140,10 +144,14 @@
                         <a href="#">Content 5</a>
                     </li>
                 </ul>
+                <div class="tabs-fn">
+                    <button @click="save">儲存</button>
+                </div>
             </div>
         </div>
     </div>
 </body>
+<script src="assets/js/sweetalert2@11.js"></script>
 <script src="assets/js/vue.global.prod.js"></script>
 <script type="module" src="assets/js/main.js"></script>
 
