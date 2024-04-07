@@ -179,6 +179,58 @@ let options = {
                 type: 'doughnut',
                 data: role_data,
             });
+        },
+        initHistoryChart() {
+            let ctx = this.$refs.history_chart;
+
+            let tension = 0.3;
+            let labels = [];
+            let d1 = [];
+            let d2 = [];
+            let d3 = [];
+            let d4 = [];
+            for (let i = 1; i <= 12; i++) {
+                labels.push(`${i}月`);
+                d1.push(Math.round(Math.random() * 10000));
+                d2.push(Math.round(Math.random() * 10000));
+                d3.push(Math.round(Math.random() * 10000));
+                d4.push(Math.round(Math.random() * 10000));
+            }
+
+            let data = {
+                labels: labels,
+                datasets: [
+                    {
+                        label: '營業額',
+                        data: d1,
+                        borderColor: '#780e86',
+                        tension: tension
+                    },
+                    {
+                        label: '去年營業額',
+                        data: d2,
+                        borderColor: '#1e2088',
+                        tension: tension
+                    },
+                    {
+                        label: '訪客數',
+                        data: d3,
+                        borderColor: '#e93369',
+                        tension: tension
+                    },
+                    {
+                        label: '會員數',
+                        data: d4,
+                        borderColor: '#ffe449',
+                        tension: tension
+                    }
+                ]
+            }
+
+            new Chart(ctx, {
+                type: 'line',
+                data: data
+            })
         }
     },
     mounted() {
@@ -191,6 +243,7 @@ let options = {
         this.fetchHotArticle();
         this.initOnlineChart();
         this.initCustomChart();
+        this.initHistoryChart();
         // let item = [];
         // for (let i = 0; i < 10; i++) {
         //     item.push({
