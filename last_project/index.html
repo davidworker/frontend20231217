@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <div class="admin-container" id="admin-app" v-cloak>
+        <div class="header">
+            <div>
+                <h1 class="admin-title">後臺管理系統</h1>
+            </div>
+            <div>
+                <ul class="header-fn">
+                    <li>
+                        <a href="#" class="to-frontend">回前台</a>
+                    </li>
+                    <li>
+                        <a href="#">管理者</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn">登出</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="left-side">
+                <ul class="fn-menu">
+                    <template v-for="(item, item_id) in menu_items">
+                        <li>
+                            <a :href="`#${item_id}`" :class="{active: current_menu == item_id}"
+                                @click="setCurrentMenu(item_id)">
+                                <span :class="item.icon[0]">
+                                    {{ item.icon[1] }}
+                                </span>
+                                <span>
+                                    {{ item.name }}
+                                </span>
+                            </a>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+            <div class="right-side">RIGHT</div>
+        </div>
+    </div>
+</body>
+<script src="assets/js/vue3.js"></script>
+<script type="module" src="assets/js/main.js"></script>
+
+</html>
