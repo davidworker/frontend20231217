@@ -85,7 +85,7 @@ let options = {
             let data = await response.json();
             this.hot_article = data;
         },
-        initChart() {
+        initOnlineChart() {
             let ctx = this.$refs.current_online;
             let data = {
                 lables: ['online', 'full'],
@@ -118,6 +118,67 @@ let options = {
                 chart.online.update();
                 this.current_online = online;
             }, 3000)
+        },
+        initCustomChart() {
+            let type = this.$refs.custom_type;
+            let type_data = {
+                lables: ['一般會員', '業務專員', '專業達人'],
+                datasets: [{
+                    label: '會員身分',
+                    data: [100, 200, 300],
+                    backgroundColor: ['#780e86', '#1e2088', '#e93369'],
+                    hoverOffset: 1
+                }]
+            }
+            new Chart(type, {
+                type: 'doughnut',
+                data: type_data,
+            });
+
+            let gender = this.$refs.custom_gender;
+            let gender_data = {
+                lables: ['男性', '女性'],
+                datasets: [{
+                    label: '會員性別',
+                    data: [100, 200],
+                    backgroundColor: ['#780e86', '#1e2088'],
+                    hoverOffset: 1
+                }]
+            }
+            new Chart(gender, {
+                type: 'doughnut',
+                data: gender_data,
+            });
+
+            let age = this.$refs.custom_age;
+            let age_data = {
+                lables: ['25~35歲', '36~45歲', '46~55歲', '56~65歲'],
+                datasets: [{
+                    label: '會員年齡',
+                    data: [100, 200, 300, 400],
+                    backgroundColor: ['#780e86', '#1e2088', '#e93369', '#ffe449'],
+                    hoverOffset: 1
+                }]
+            }
+            new Chart(age, {
+                type: 'doughnut',
+                data: age_data,
+            });
+
+            let role = this.$refs.custom_role;
+            let role_data = {
+                lables: ['標準會員', '基本會員', '高級會員'],
+                datasets: [{
+                    label: '會員分級',
+                    data: [100, 200, 300],
+                    backgroundColor: ['#780e86', '#1e2088', '#e93369'],
+                    hoverOffset: 1
+                }]
+            }
+            new Chart(role, {
+                type: 'doughnut',
+                data: role_data,
+            });
         }
     },
     mounted() {
@@ -128,7 +189,8 @@ let options = {
         this.fetchProgressItem();
         this.fetchHotItem();
         this.fetchHotArticle();
-        this.initChart();
+        this.initOnlineChart();
+        this.initCustomChart();
         // let item = [];
         // for (let i = 0; i < 10; i++) {
         //     item.push({

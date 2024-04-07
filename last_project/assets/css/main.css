@@ -275,3 +275,54 @@
 .online-chart-num {
     font-size: 2rem;
 }
+
+.custom-item .dashboard-title {
+    font-size: 1rem;
+}
+
+.custom-chart {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.custom-item-text {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    font-size: 0.8rem
+}
+
+.custom-item-text li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.custom-item-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #780e86;
+}
+
+.custom-item-text li:nth-child(2) .custom-item-circle {
+    background: #1e2088;
+}
+
+.custom-item-text li:nth-child(3) .custom-item-circle {
+    background: #e93369;
+}
+
+.custom-item-text li:nth-child(4) .custom-item-circle {
+    background: #ffe449;
+}
+
+.cutome-item-percentage {
+    padding: 0 4px;
+    background: #7a7a7a;
+    color: #fff;
+    border-radius: 100px;
+    font-size: 0.7rem;
+}
