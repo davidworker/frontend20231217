@@ -30,7 +30,9 @@ let options = {
                 sms: 0,
                 item: 0,
                 member: 0
-            }
+            },
+            hot_item: [],
+            hot_article: [],
         }
     },
     methods: {
@@ -66,6 +68,16 @@ let options = {
             let response = await fetch('assets/database/progress.json');
             let data = await response.json();
             this.progress_item = data;
+        },
+        async fetchHotItem() {
+            let response = await fetch('assets/database/hot_item.json');
+            let data = await response.json();
+            this.hot_item = data;
+        },
+        async fetchHotArticle() {
+            let response = await fetch('assets/database/hot_article.json');
+            let data = await response.json();
+            this.hot_article = data;
         }
     },
     mounted() {
@@ -74,6 +86,16 @@ let options = {
         this.initCurrentMenu();
         this.fetchDiffItem();
         this.fetchProgressItem();
+        this.fetchHotItem();
+        this.fetchHotArticle();
+        // let item = [];
+        // for (let i = 0; i < 10; i++) {
+        //     item.push({
+        //         title: '標題' + Math.round(Math.random() * 1000),
+        //         visit: Math.round(Math.random() * 100000),
+        //     })
+        // }
+        // console.log(JSON.stringify(item))
     }
 }
 

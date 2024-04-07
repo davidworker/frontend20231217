@@ -162,7 +162,8 @@
 .progress-item {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px
+    gap: 15px;
+    margin-bottom: 15px
 }
 
 .progress-item>div {
@@ -175,4 +176,85 @@
 
 .progress-item-num {
     font-size: 2rem;
+}
+
+.info-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.info-item>div {
+    padding: 15px;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+}
+
+.custom-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.custom-item>div {
+    padding: 15px;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+}
+
+.hot-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.hot-item>div {
+    padding: 15px;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+}
+
+.hot-item-title {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.admin-table {
+    width: 100%;
+    overflow: auto;
+}
+
+.admin-table table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid #999999;
+    border-radius: 4px;
+}
+
+.admin-table table th,
+.admin-table table td {
+    padding: 10px;
+}
+
+.admin-table table th {
+    background: #f3f3f3;
+}
+
+.admin-table table td {
+    background: #d4d4d4;
+}
+
+.admin-table table tr:nth-child(even) td {
+    background: #f5f5f5;
+}
+
+.admin-table table tr:hover td {
+    background: rgb(123, 165, 255);
+}
+
+.admin-table .text-end {
+    text-align: right;
 }

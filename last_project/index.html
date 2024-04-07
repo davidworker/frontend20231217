@@ -151,6 +151,67 @@
                         <div>總會員數</div>
                     </div>
                 </div>
+                <div class="info-item">
+                    <div>圖表</div>
+                    <div>在線人數</div>
+                </div>
+                <h3 class="dashboard-title">顧客分析</h3>
+                <div class="custom-item">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+                <div class="hot-item">
+                    <div>
+                        <h4 class="hot-item-title">熱門物件</h4>
+                        <div class="admin-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>排名</th>
+                                        <th>地址</th>
+                                        <th>類型</th>
+                                        <th>底價</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template v-for="(item, item_index) in hot_item">
+                                        <tr>
+                                            <td>{{ item_index + 1 }}</td>
+                                            <td>{{ item.address }}</td>
+                                            <td>{{ item.type }}</td>
+                                            <td class="text-end">{{ item.price }}</td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="hot-item-title">熱門文章</h4>
+                        <div class="admin-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>排名</th>
+                                        <th>標題</th>
+                                        <th>瀏覽量</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template v-for="(item, item_index) in hot_article">
+                                        <tr>
+                                            <td>{{ item_index + 1 }}</td>
+                                            <td>{{ item.title }}</td>
+                                            <td class="text-end">{{ item.visit }}</td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
