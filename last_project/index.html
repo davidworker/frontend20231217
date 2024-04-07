@@ -152,8 +152,19 @@
                     </div>
                 </div>
                 <div class="info-item">
-                    <div>圖表</div>
-                    <div>在線人數</div>
+                    <div>
+                        <h4 class="dashboard-title">統計年表</h4>
+                    </div>
+                    <div>
+                        <h4 class="dashboard-title">目前在線人數</h4>
+                        <div class="online-chart-wrap">
+                            <canvas ref="current_online"></canvas>
+                            <div class="online-chart-text">
+                                <div class="online-chart-num">{{ current_online }}</div>
+                                <div>使用者</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <h3 class="dashboard-title">顧客分析</h3>
                 <div class="custom-item">
@@ -216,6 +227,7 @@
         </div>
     </div>
 </body>
+<script src="assets/js/chart.js"></script>
 <script src="assets/js/vue3.js"></script>
 <script type="module" src="assets/js/main.js"></script>
 

@@ -1,3 +1,8 @@
+let chart = {
+    online: '',
+}
+
+
 let options = {
     data() {
         return {
@@ -33,6 +38,7 @@ let options = {
             },
             hot_item: [],
             hot_article: [],
+            current_online: 0
         }
     },
     methods: {
@@ -78,6 +84,40 @@ let options = {
             let response = await fetch('assets/database/hot_article.json');
             let data = await response.json();
             this.hot_article = data;
+        },
+        initChart() {
+            let ctx = this.$refs.current_online;
+            let data = {
+                lables: ['online', 'full'],
+                datasets: [{
+                    label: 'cureent online',
+                    data: [0, 100],
+                    backgroundColor: ['#345ad6', '#dedede'],
+                    hoverOffset: 1
+                }]
+            }
+            chart.online = new Chart(ctx, {
+                type: 'doughnut',
+                data: data,
+                options: {
+                    rotation: -90,
+                    circumference: 180,
+                    plugins: {
+                        tooltip: {
+                            enabled: false
+                        },
+                    }
+                }
+            });
+
+            setInterval(() => {
+                let online = Math.round(Math.random() * 100);
+                let full = 100 - online;
+                chart.online.data.datasets[0].data[0] = online;
+                chart.online.data.datasets[0].data[1] = full;
+                chart.online.update();
+                this.current_online = online;
+            }, 3000)
         }
     },
     mounted() {
@@ -88,6 +128,7 @@ let options = {
         this.fetchProgressItem();
         this.fetchHotItem();
         this.fetchHotArticle();
+        this.initChart();
         // let item = [];
         // for (let i = 0; i < 10; i++) {
         //     item.push({

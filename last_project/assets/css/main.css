@@ -180,7 +180,7 @@
 
 .info-item {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3.1fr 1fr;
     gap: 15px;
     margin-bottom: 15px;
 }
@@ -257,4 +257,21 @@
 
 .admin-table .text-end {
     text-align: right;
+}
+
+.online-chart-wrap {
+    position: relative;
+}
+
+.online-chart-text {
+    position: absolute;
+    bottom: 15%;
+    left: 41%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.online-chart-num {
+    font-size: 2rem;
 }
