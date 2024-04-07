@@ -58,16 +58,16 @@
                     <div>
                         <div class="diff-header">
                             <div>營業額</div>
-                            <div class="diff-header-num">同月比<span>+500</span></div>
+                            <div class="diff-header-num">同月比<span>{{ diff_item.sale.month }}</span></div>
                         </div>
                         <div class="diff-day">
                             <div>
                                 <div class="diff-day-name">今天</div>
-                                <div class="diff-day-num">$5000</div>
+                                <div class="diff-day-num">${{ diff_item.sale.today }}</div>
                             </div>
                             <div>
                                 <div class="diff-day-name">本周</div>
-                                <div class="diff-day-num">$15000</div>
+                                <div class="diff-day-num">${{ diff_item.sale.week }}</div>
                             </div>
                         </div>
                         <div class="diff-progress">
@@ -77,16 +77,16 @@
                     <div>
                         <div class="diff-header">
                             <div>訂單數</div>
-                            <div class="diff-header-num">同月比<span>+500</span></div>
+                            <div class="diff-header-num">同月比<span>{{ diff_item.order.month }}</span></div>
                         </div>
                         <div class="diff-day">
                             <div>
                                 <div class="diff-day-name">今天</div>
-                                <div class="diff-day-num">$5000</div>
+                                <div class="diff-day-num">{{ diff_item.order.today }}</div>
                             </div>
                             <div>
                                 <div class="diff-day-name">本周</div>
-                                <div class="diff-day-num">$15000</div>
+                                <div class="diff-day-num">{{ diff_item.order.week }}</div>
                             </div>
                         </div>
                         <div class="diff-progress">
@@ -96,16 +96,16 @@
                     <div>
                         <div class="diff-header">
                             <div>會員數</div>
-                            <div class="diff-header-num">同月比<span>+500</span></div>
+                            <div class="diff-header-num">同月比<span>{{ diff_item.member.month }}</span></div>
                         </div>
                         <div class="diff-day">
                             <div>
                                 <div class="diff-day-name">今天</div>
-                                <div class="diff-day-num">$5000</div>
+                                <div class="diff-day-num">{{ diff_item.member.today }}</div>
                             </div>
                             <div>
                                 <div class="diff-day-name">本周</div>
-                                <div class="diff-day-num">$15000</div>
+                                <div class="diff-day-num">{{ diff_item.member.week }}</div>
                             </div>
                         </div>
                         <div class="diff-progress">
@@ -115,21 +115,40 @@
                     <div>
                         <div class="diff-header">
                             <div>瀏覽量</div>
-                            <div class="diff-header-num">同月比<span>+500</span></div>
+                            <div class="diff-header-num">同月比<span>{{ diff_item.visit.month }}</span></div>
                         </div>
                         <div class="diff-day">
                             <div>
                                 <div class="diff-day-name">今天</div>
-                                <div class="diff-day-num">$5000</div>
+                                <div class="diff-day-num">{{ diff_item.visit.today }}</div>
                             </div>
                             <div>
                                 <div class="diff-day-name">本周</div>
-                                <div class="diff-day-num">$15000</div>
+                                <div class="diff-day-num">{{ diff_item.visit.week }}</div>
                             </div>
                         </div>
                         <div class="diff-progress">
                             <div>100%</div>
                         </div>
+                    </div>
+                </div>
+                <h3 class="dashboard-title">處理事項</h3>
+                <div class="progress-item">
+                    <div>
+                        <div class="progress-item-num">{{ progress_item.question }}</div>
+                        <div>待處理詢問</div>
+                    </div>
+                    <div>
+                        <div class="progress-item-num">{{ progress_item.sms }}</div>
+                        <div>簡訊剩餘數</div>
+                    </div>
+                    <div>
+                        <div class="progress-item-num">{{ progress_item.item }}</div>
+                        <div>總物件數</div>
+                    </div>
+                    <div>
+                        <div class="progress-item-num">{{ progress_item.member }}</div>
+                        <div>總會員數</div>
                     </div>
                 </div>
             </div>

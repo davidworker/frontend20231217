@@ -153,3 +153,26 @@
     background: rgb(52, 90, 214);
     z-index: 1;
 }
+
+.dashboard-title {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.progress-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px
+}
+
+.progress-item>div {
+    background: #dedede;
+    border-radius: 4px;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.progress-item-num {
+    font-size: 2rem;
+}

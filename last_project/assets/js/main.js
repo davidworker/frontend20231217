@@ -3,6 +3,34 @@ let options = {
         return {
             menu_items: {},
             current_menu: 'dashboard',
+            diff_item: {
+                sale: {
+                    month: 0,
+                    today: 0,
+                    week: 0
+                },
+                order: {
+                    month: 0,
+                    today: 0,
+                    week: 0
+                },
+                member: {
+                    month: 0,
+                    today: 0,
+                    week: 0
+                },
+                visit: {
+                    month: 0,
+                    today: 0,
+                    week: 0
+                }
+            },
+            progress_item: {
+                question: 0,
+                sms: 0,
+                item: 0,
+                member: 0
+            }
         }
     },
     methods: {
@@ -28,12 +56,24 @@ let options = {
                 icon: ['material-symbols-outlined', 'settings'],
                 name: '前台頁面設定'
             };
+        },
+        async fetchDiffItem() {
+            let response = await fetch('assets/database/diff.json');
+            let data = await response.json();
+            this.diff_item = data;
+        },
+        async fetchProgressItem() {
+            let response = await fetch('assets/database/progress.json');
+            let data = await response.json();
+            this.progress_item = data;
         }
     },
     mounted() {
         console.log('admin app is mount.');
         this.initMenuItems();
         this.initCurrentMenu();
+        this.fetchDiffItem();
+        this.fetchProgressItem();
     }
 }
 

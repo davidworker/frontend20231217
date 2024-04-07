@@ -1,0 +1,22 @@
+{
+    "sale": {
+        "month": "+3000",
+        "today": 110,
+        "week": 300
+    },
+    "order": {
+        "month": "-200",
+        "today": 120,
+        "week": 300
+    },
+    "member": {
+        "month": "+400",
+        "today": 130,
+        "week": 300
+    },
+    "visit": {
+        "month": "-300",
+        "today": 140,
+        "week": 300
+    }
+}
